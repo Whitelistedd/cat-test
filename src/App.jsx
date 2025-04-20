@@ -39,7 +39,7 @@ function App() {
       interval = setInterval(fetchCatImage, 5000);
     }
     return () => clearInterval(interval);
-  }, [autoRefresh, enabled]);
+  }, [autoRefresh, enabled, imageUrl]);
 
   return (
     <AppContainer>
