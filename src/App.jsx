@@ -29,6 +29,11 @@ function App() {
     }
   };
 
+  const handleRefreshChange = (value) => {
+    setEnabled(value);
+    if (!value) setAutoRefresh(false);
+  }
+
   useEffect(() => {
     fetchCatImage();
   }, []);
@@ -46,7 +51,7 @@ function App() {
       <Header
         enabled={enabled}
         autoRefresh={autoRefresh}
-        onEnabledChange={setEnabled}
+        onEnabledChange={handleRefreshChange}
         onAutoRefreshChange={setAutoRefresh}
       />
       <ImageContainer imageUrl={imageUrl} />
